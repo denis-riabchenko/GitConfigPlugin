@@ -1,0 +1,23 @@
+apply plugin: 'groovy'
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    compile 'commons-configuration:commons-configuration:1.10'
+    compile 'commons-io:commons-io:2.4'
+    compile 'org.apache.commons:commons-collections4:4.0'
+}
+
+apply plugin: 'maven'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.11'
+}
+
+group = 'com.epam.gradle'
+version = '1.0-SNAPSHOT'

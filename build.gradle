@@ -1,0 +1,17 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'com.epam.gradle', name: 'GitConfigPlugin',
+                  version: '1.0-SNAPSHOT'
+    }
+}
+apply plugin: 'com.epam.gradle.gitConfig'
+
+task configuration (type: com.epam.gradle.GitConfigMergeTask) {
+    sourceFileName = 'git.config';
+    originalFileName = '.git/config';
+    destinationFileName = '.git/config2';
+}
